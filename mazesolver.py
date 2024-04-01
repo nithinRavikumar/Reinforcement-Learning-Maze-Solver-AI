@@ -178,7 +178,8 @@ class MazeSolverGUI:
 # ])
 
 def generate_large_maze(rows, cols):
-    np.random.seed(42)
+    # seed 42 used for testing currently random seed
+    np.random.seed()
 
     rows = max(rows, 5)
     cols = max(cols, 5)
@@ -204,7 +205,8 @@ def generate_large_maze(rows, cols):
 
 
 def main():
-    maze_layout = generate_large_maze(15,15)
+    # best if set to 10 or less
+    maze_layout = generate_large_maze(7,7)
     root = tk.Tk()
     root.title("Maze Solver")
     app = MazeSolverGUI(root, maze_layout)
